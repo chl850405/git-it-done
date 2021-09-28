@@ -14,16 +14,17 @@ var formSubmitHandler = function(event) {
       getUsersRepos(username);
 
       //clear old content
-      repoContainerEl.textContent = '';
-      nameInputEl.value = '';
+      repoContainerEl.textContent = "";
+      nameInputEl.value = "";
     }else {
-      alert('Please enter a GitHub username');
+      alert("Please enter a GitHub username");
     }
   };
 
 var getUsersRepos = function(user) {
   //format the github api url
-  var apiUrl ='https://api.github.com/users/'+ user + '/repos';
+  var apiUrl ="https://api.github.com/users/"+ user + 
+  "/repos";
 
   //make a get request to the url
   fetch(apiUrl)
@@ -57,7 +58,7 @@ var displayRepos = function(repos, searchTerm) {
   //loop over repos
 for(var i = 0; i < repos.length; i++) {
   //format repo name
-  var repoName = repos[i].owner.login + '/' + repos[i].name;
+  var repoName = repos[i].owner.login + "/" + repos[i].name;
 
   // create a container for each repo
   var repoEl = document.createElement("div");
